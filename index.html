@@ -9,7 +9,6 @@
   <style>
     :root {
       --bg: #f4f1ea;
-      --panel: #e9e4d8;
       --fg: #1f2a24;
       --muted: #5f6b63;
       --line: #d3ccbc;
@@ -21,7 +20,6 @@
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #121814;
-        --panel: #1a221d;
         --fg: #e8ece6;
         --muted: #9aa69e;
         --line: #2c3730;
@@ -33,7 +31,7 @@
     body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--sans); }
     a { color: var(--accent); }
     .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-    .muted, .en { color: var(--muted); }
+    .en { color: var(--muted); }
 
     header { padding: 28px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--line); }
     .brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; }
@@ -59,12 +57,6 @@
     .services h3 span { display: block; font-family: var(--sans); font-size: 0.85rem; font-weight: 400; color: var(--muted); margin-top: 4px; }
     .services p { margin: 0 0 6px; }
 
-    .details { background: var(--panel); border-radius: 16px; padding: 32px; }
-    .details dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 32px; margin: 0; }
-    .details dt { font-size: 0.82rem; color: var(--muted); }
-    .details dt span { display: block; font-size: 0.75rem; opacity: 0.85; }
-    .details dd { margin: 4px 0 0; font-weight: 500; overflow-wrap: anywhere; }
-
     .privacy { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; font-size: 0.92rem; }
     .privacy p { margin: 0; }
     footer { padding: 32px 0 48px; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -73,13 +65,10 @@
       .hero { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 40px; }
       .services li { grid-template-columns: 40px 1fr; gap: 8px 16px; }
       .services li > div:last-child { grid-column: 2; }
-      .details { padding: 24px 20px; }
-      .details dl { grid-template-columns: 1fr 1fr; }
       .privacy { grid-template-columns: 1fr; gap: 16px; }
     }
     @media (max-width: 420px) {
       .wrap { padding: 0 16px; }
-      .details dl { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -132,38 +121,6 @@
       </ol>
     </section>
 
-    <section>
-      <p class="label">Bedrijfsgegevens / Company details</p>
-      <div class="details">
-        <dl>
-          <div>
-            <dt>Handelsnaam<span lang="en">Trade name</span></dt>
-            <dd>SA AI Development</dd>
-          </div>
-          <div>
-            <dt>Rechtsvorm<span lang="en">Legal form</span></dt>
-            <dd>Eenmanszaak <span class="muted" lang="en">(sole proprietorship)</span></dd>
-          </div>
-          <div>
-            <dt>Adres<span lang="en">Address</span></dt>
-            <dd>Spaklerweg 12 C 62<br>1096 BA Amsterdam<br><span class="muted">Nederland / The Netherlands</span></dd>
-          </div>
-          <div>
-            <dt>KvK-nummer<span lang="en">Chamber of Commerce no.</span></dt>
-            <dd>99464225</dd>
-          </div>
-          <div>
-            <dt>Btw-id<span lang="en">VAT ID</span></dt>
-            <dd>NL005388174B08</dd>
-          </div>
-          <div>
-            <dt>E-mail</dt>
-            <dd><a href="mailto:info@saaidev.com">info@saaidev.com</a></dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
     <section id="privacy">
       <p class="label">Privacy</p>
       <div class="privacy">
@@ -174,7 +131,7 @@
 
     <footer>
       <span>© <span id="y">2026</span> SA AI Development</span>
-      <span>KvK 99464225 · Amsterdam</span>
+      <a href="mailto:info@saaidev.com">info@saaidev.com</a>
     </footer>
   </div>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
